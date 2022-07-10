@@ -1,3 +1,4 @@
+import asyncio
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -14,7 +15,9 @@ path = Path(__file__).parent
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/")
-async def root():
+@asyncio.coroutine
+def root():
+# async def root():
     print("path: ")
     print(path)
     html_file = path / 'templates' / 'index.html'
