@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates 
 from pathlib import Path 
+import uvicorn
 
 app = FastAPI()
 
@@ -23,3 +24,6 @@ async def root():
     # return { "message": "Hello World" }
     # return templates.TemplateResponse("index.html", { "request": request, "id": id })
 
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="running-speedwork-split-times-calculator-ovxsgsxdz-seanatuk19.vercel.app", port=3000, log_level="info")
