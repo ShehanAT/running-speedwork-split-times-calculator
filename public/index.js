@@ -7,7 +7,7 @@ window.onload = function() {
     
     // Handle messages sent by the server.
     sendMessage = function(message, splitTimesArr) {
-      messagesList.innerHTML += '<li class="received">Split Times: ' + splitTimesArr.toString() + " " + message + '</li>';
+      messagesList.innerHTML += '<li class="received">Split Times: ' + splitTimesArr.toString() + " &#10145;&#65039; " + message + '</li>';
     };
 
     sendErrorMessage = function(errorMessage){
@@ -121,7 +121,7 @@ window.onload = function() {
         if(avgSplitTime.includes("NaN")){
           sendErrorMessage("Invalid input, make sure to only enter numeric values. Please try again...");
         }else{
-          sendMessage("Mean split time: " + avgSplitTime, splitTimesArr);
+          sendMessage("Average Split Time: " + avgSplitTime, splitTimesArr);
         }
      
       }
