@@ -10,6 +10,11 @@ window.onload = function() {
       messagesList.innerHTML = ""
       messagesList.innerHTML += '<li class="received">' + message + '</li>';
     };
+
+    sendErrorMessage = function(errorMessage){
+      messagesList.innerHTML = ""
+      messagesList.innerHTML += '<li class="received" style="color: red;">' + errorMessage + '</li>';
+    }
   
     function checkTime(intTime) {
       try{
@@ -114,11 +119,16 @@ window.onload = function() {
         console.log("Mean split time: ");
         console.log(avgSplitTime);
         // Send the message through the WebSocket.
-        sendMessage("Mean split time: " + avgSplitTime);
+        if(avgSplitTime.includes("NaN")){
+          sendErrorMessage("Invalid input, make sure to only enter numeric values. Please try again...");
+        }else{
+          sendMessage("Mean split time: " + avgSplitTime);
+        }
+     
       }
         
       else{
-        sendMessage("Please enter your running split times in the following format MM:SS, as command line arguments separated by a space");
+        sendMessage("Please enter your running split times in the following format MM:SS, with each separated by a space");
       }
 
       return false;
