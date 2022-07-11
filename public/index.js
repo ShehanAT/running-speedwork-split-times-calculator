@@ -6,9 +6,8 @@ window.onload = function() {
     var messagesList = document.getElementById('messages');
     
     // Handle messages sent by the server.
-    sendMessage = function(message) {
-      messagesList.innerHTML = ""
-      messagesList.innerHTML += '<li class="received">' + message + '</li>';
+    sendMessage = function(message, splitTimesArr) {
+      messagesList.innerHTML += '<li class="received">Split Times: ' + splitTimesArr.toString() + " " + message + '</li>';
     };
 
     sendErrorMessage = function(errorMessage){
@@ -122,15 +121,19 @@ window.onload = function() {
         if(avgSplitTime.includes("NaN")){
           sendErrorMessage("Invalid input, make sure to only enter numeric values. Please try again...");
         }else{
-          sendMessage("Mean split time: " + avgSplitTime);
+          sendMessage("Mean split time: " + avgSplitTime, splitTimesArr);
         }
      
       }
         
       else{
-        sendMessage("Please enter your running split times in the following format MM:SS, with each separated by a space");
+        sendErrorMessage("Please enter your running split times in the following format MM:SS, with each separated by a space");
       }
 
       return false;
     };
+
+    resetMessagesList = function() {
+      messagesList.innerHTML = ""
+    }
 };
