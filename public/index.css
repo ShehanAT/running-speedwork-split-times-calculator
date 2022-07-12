@@ -157,3 +157,6 @@ ul li:hover:after {
   border-left-color: #f9dd94;
 }
     
+footer {
+  text-align: center;
+}

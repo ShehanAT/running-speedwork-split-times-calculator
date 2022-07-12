@@ -10,24 +10,28 @@
 <body>
     <div id="page-wrapper">
         <h1>Running Splits Average Time Calculator</h1>
-        
-   
 
-        <div id="status">A simple average calculator for calculating the average time for a set of running splits you've done.<br><br>
-            Enter your running times for each split, seperated by a space.<br>
-            For example: '3:45 3:50 3:42 3:52'</div>
+        <div id="status">This is a simple average calculator for calculating the average time for a set of running splits you've done.<br><br>
+            To use it: enter your running times for each split, separated by a space. You can enter multiple sets of split times by entering each set of times followed by clicking 'Calculate'. The 'Reset' button is for erasing all previously entered times.<br><br>
+            
+            For example: If you've done a 800m x 6 workout just enter each of your split times separated by a space like so: '3:30 3:28 3:25 3:33 3:35 3:29'
+        </div>
         
         <div>
         <ul id="messages"></ul>
         </div>
         <form id="message-form" action="#" method="post">
-          <textarea id="message" placeholder="Enter your running times for each split, seperated by a space" required></textarea>
+          <textarea id="message" placeholder="Enter your running times for each split, separated by a space" required></textarea>
           <button type="submit">Calculate</button>
           <button type="button" onclick="resetMessagesList()">Reset</button>
         </form>
     </div>
     
     <script src="./index.js"></script>
+    <footer>
+        <p>© 2022</span> Sean Atukorala
+        </p>
+    </footer>
 </body>
 </html>
 
